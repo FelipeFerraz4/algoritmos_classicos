@@ -12,25 +12,34 @@ int main() {
     //if(full_list(list))
     int emptyList = empty_list(list);
     //if(empty_list(list))
-    Student student1, student2;
-    student1.ID = 1;
+    Student student1, student2, student3;
+    student1.ID = 2;
     strcmp(student1.name, "Vanessa");
     student1.test1 = 9;
     student1.test2 = 10;
     student1.test3 = 8;
     
-    student2.ID = 2;
+    student2.ID = 1;
     strcmp(student2.name, "Beatriz");
     student2.test1 = 9.5;
     student2.test2 = 9;
     student2.test3 = 10;
     
+    student3.ID = 3;
+    strcmp(student3.name, "Marata");
+    student3.test1 = 7;
+    student3.test2 = 9;
+    student3.test3 = 8;
+    
     int result1 = add_list_element(list, student1);
     int result2 = add_beginning_list(list, student2);
+    int result3 = add_sort_list(list, student3);
 
     free_list(list);
     printf("ponto %d\n", list->data[0].ID);
     printf("ponto %d\n", list->data[1].ID);
+    printf("ponto %d\n", list->data[2].ID);
+    
 
     return 0;
 }
