@@ -10,4 +10,5 @@ typedef struct list List;
 List* create_list();
 void free_list(List* list);
 int size_list(List* list);
-int Full_list(List* list);
+int full_list(List* list);
+int empty_list(List* list);
