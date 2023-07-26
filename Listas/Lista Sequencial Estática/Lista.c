@@ -52,6 +52,7 @@ int empty_list(List* list){
     }
 }
 
+//adiciona elementos no final da lista
 int add_list_element(List* list, Student student){
     if(list == NULL){
         return 0;
