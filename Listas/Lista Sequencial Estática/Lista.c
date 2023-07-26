@@ -51,3 +51,17 @@ int empty_list(List* list){
         return (list->size_element == 0);
     }
 }
+
+int add_list_element(List* list, Student student){
+    if(list == NULL){
+        return 0;
+    }
+    
+    if(full_list(list) == 1){
+        return 0;
+    }
+    
+    list->data[list->size_element] = student;
+    list->size_element++;
+    return 1;
+}
