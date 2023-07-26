@@ -42,3 +42,12 @@ int full_list(List* list){
         return (list->size_element == SIZE_LIST);
     }
 }
+
+int empty_list(List* list){
+    if(list == NULL){
+        return -1;
+    }
+    else{
+        return (list->size_element == 0);
+    }
+}
