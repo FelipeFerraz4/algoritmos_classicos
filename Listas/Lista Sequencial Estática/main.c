@@ -9,6 +9,8 @@ int main() {
     int size = size_list(list);
     int fullList = full_list(list);
     //if(full_list(list))
+    int emptyList = empty_list(list);
+    //if(empty_list(list))
 
     free_list(list);
 
