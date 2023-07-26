@@ -14,3 +14,4 @@ int full_list(List* list);
 int empty_list(List* list);
 int add_list_element(List* list, Student student);
 int add_beginning_list(List* list, Student student);
+int add_sort_list(List* list, Student student);
