@@ -66,3 +66,22 @@ int add_list_element(List* list, Student student){
     list->size_element++;
     return 1;
 }
+
+//adiciona elementos no inicio da lista
+int add_beginning_list(List* list, Student student){
+    if(list == NULL){
+        return 0;
+    }
+    
+    if(full_list(list)  == 1){
+        return 0;
+    }
+    
+    for(int i = list->size_element - 1; i >= 0; i--){
+        list->data[i+1] = list->data[i];
+    }
+    
+    list->data[0] = student;
+    list->size_element++;
+    return 1;
+}
