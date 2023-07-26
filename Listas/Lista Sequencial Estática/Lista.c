@@ -85,3 +85,27 @@ int add_beginning_list(List* list, Student student){
     list->size_element++;
     return 1;
 }
+
+//adiciona elemento de forma ordenada na lista
+int add_sort_list(List* list, Student student){
+    if(list == NULL){
+        return 0;
+    }
+    
+    if(full_list(list)  == 1){
+        return 0;
+    }
+    
+    int i = 0;
+    while(i < list->size_element && list->data[i].ID < student.ID){
+        i++;
+    }
+    
+    for(int j = list->size_element - 1; j >= i; j--){
+        list->data[j+1] = list->data[j];
+    }
+    
+    list->data[i] = student;
+    list->size_element++;
+    return 1;
+}
