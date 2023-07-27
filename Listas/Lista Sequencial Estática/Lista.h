@@ -6,12 +6,16 @@ typedef struct student {
     float test1, test2, test3;
 } Student;
 
-typedef struct list List;
+typedef struct list_student{
+    int size_element;
+    Student data[SIZE_LIST];
+} List;
+
 List* create_list();
-void free_list(List* list);
-int size_list(List* list);
-int full_list(List* list);
-int empty_list(List* list);
-int add_list_element(List* list, Student student);
-int add_beginning_list(List* list, Student student);
-int add_sort_list(List* list, Student student);
+void free_list(List* list_student);
+int size_list(List* list_student);
+int full_list(List* list_student);
+int empty_list(List* list_student);
+int add_list_element(List* list_student, Student student);
+int add_beginning_list(List* list_student, Student student);
+int add_sort_list(List* list_student, Student student);
