@@ -50,7 +50,7 @@ int empty_list(List* list_student){
 }
 
 //adiciona elementos no final da lista
-int add_list_element(List* list_student, Student student){
+int add_end_list_element(List* list_student, Student student){
     if(list_student == NULL){
         return 0;
     }
@@ -106,3 +106,17 @@ int add_sort_list(List* list_student, Student student){
     list_student->size_element++;
     return 1;
 }
+
+int remove_end_list(List* list_student){
+    if(list_student == NULL){
+        return 0;
+    }
+
+    if(list_student->size_element == 0){
+        return 0;
+    }
+
+    list_student->size_element--;
+    return 1;
+}
+

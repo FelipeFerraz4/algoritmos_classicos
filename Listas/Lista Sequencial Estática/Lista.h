@@ -13,9 +13,13 @@ typedef struct list_student{
 
 List* create_list();
 void free_list(List* list_student);
+
 int size_list(List* list_student);
 int full_list(List* list_student);
 int empty_list(List* list_student);
-int add_list_element(List* list_student, Student student);
+
+int add_end_list_element(List* list_student, Student student);
 int add_beginning_list(List* list_student, Student student);
 int add_sort_list(List* list_student, Student student);
+
+int remove_end_list(List* list_student);

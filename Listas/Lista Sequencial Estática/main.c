@@ -32,9 +32,9 @@ int main() {
     student3.test2 = 9;
     student3.test3 = 8;
 
-    int result1 = add_list_element(list_student, student1);
-    int result2 = add_beginning_list(list_student, student2);
-    int result3 = add_sort_list(list_student, student3);
+    int add_result1 = add_end_list_element(list_student, student1);
+    int add_result2 = add_beginning_list(list_student, student2);
+    int add_result3 = add_sort_list(list_student, student3);
 
     printf("ponto %d\n", list_student->data[0].ID);
     printf("ponto %d\n", list_student->data[1].ID);
@@ -43,6 +43,8 @@ int main() {
     printf("ponto %s\n", list_student->data[0].name);
     printf("ponto %s\n", list_student->data[1].name);
     printf("ponto %s\n", list_student->data[2].name);
+
+    int remove_result1 = remove_end_list(list_student);
 
     free_list(list_student);
 
