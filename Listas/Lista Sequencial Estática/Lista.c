@@ -120,3 +120,20 @@ int remove_end_list(List* list_student){
     return 1;
 }
 
+int remove_beginning_list(List* list_student){
+    if(list_student == NULL){
+        return 0;
+    }
+
+    if(list_student->size_element == 0){
+        return 0;
+    }
+
+    for(int i = 0; i < list_student->size_element - 1; i++){
+        list_student->data[i] = list_student->data[i+1];
+    }
+
+    list_student->size_element--;
+    return 1;
+}
+

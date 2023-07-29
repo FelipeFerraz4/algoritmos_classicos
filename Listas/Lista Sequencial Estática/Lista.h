@@ -23,3 +23,4 @@ int add_beginning_list(List* list_student, Student student);
 int add_sort_list(List* list_student, Student student);
 
 int remove_end_list(List* list_student);
+int remove_beginning_list(List* list_student);
