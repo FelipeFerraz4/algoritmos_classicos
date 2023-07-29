@@ -7,11 +7,20 @@ int main() {
 
     List *list_student;
     list_student = create_list();
+
     int size = size_list(list_student);
+    printf("Tamanho da lista: %d\n", size);
+
     int fullList = full_list(list_student);
+    printf("Lista cheia: %d\n", fullList);
+
     //if(full_list(list_student))
+
     int emptyList = empty_list(list_student);
+    printf("Lista vazia: %d\n", emptyList);
+
     //if(empty_list(list_student))
+
     Student student1, student2, student3;
 
     student2.ID = 1;
