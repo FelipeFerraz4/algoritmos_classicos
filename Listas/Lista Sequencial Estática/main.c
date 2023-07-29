@@ -55,9 +55,9 @@ int main() {
 
     Student student4, student5;
     int search_result1 = search_position_list(list_student, 1, &student4);
-    //int search_result2 = search_key_list(list_student, 1, &student5);
+    int search_result2 = search_key_list(list_student, 1, &student5);
 
-    //printf("Resultado da search: %d %d\n", search_result1, search_result2);
+    printf("Resultado da search: %d %d\n", search_result1, search_result2);
 
     int remove_result1 = remove_end_list(list_student);
     int remove_result2 = remove_beginning_list(list_student);

@@ -176,7 +176,7 @@ int search_position_list(List* list_student, int position, Student* student){
     return 1;
 }
 
-/*
+
 int search_key_list(List* list_student, int key, Student* student){
     if(list_student == NULL){
         return 0;
@@ -194,4 +194,4 @@ int search_key_list(List* list_student, int key, Student* student){
     *student = list_student->data[i];
     return 1;
 }
-*/
+
