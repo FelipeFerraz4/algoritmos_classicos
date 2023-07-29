@@ -36,17 +36,35 @@ int main() {
     int add_result2 = add_beginning_list(list_student, student2);
     int add_result3 = add_sort_list(list_student, student3);
 
-    printf("ponto %d\n", list_student->data[0].ID);
-    printf("ponto %d\n", list_student->data[1].ID);
-    printf("ponto %d\n", list_student->data[2].ID);
+    printf("Resultado da adition: %d %d %d\n", add_result1, add_result2, add_result3);
 
-    printf("ponto %s\n", list_student->data[0].name);
-    printf("ponto %s\n", list_student->data[1].name);
-    printf("ponto %s\n", list_student->data[2].name);
+    printf("\nmatricula: %d\n", list_student->data[0].ID);
+    printf("nome: %s\n", list_student->data[0].name);
+    printf("notas: %.2f %.2f %.2f\n", list_student->data[0].test1,
+           list_student->data[0].test2, list_student->data[0].test3);
+
+    printf("\nmatricula: %d\n", list_student->data[1].ID);
+    printf("nome: %s\n", list_student->data[1].name);
+    printf("notas: %.2f %.2f %.2f\n", list_student->data[1].test1,
+           list_student->data[1].test2, list_student->data[1].test3);
+
+    printf("\nmatricula: %d\n", list_student->data[2].ID);
+    printf("nome: %s\n", list_student->data[2].name);
+    printf("notas: %.2f %.2f %.2f\n\n", list_student->data[2].test1,
+           list_student->data[2].test2, list_student->data[2].test3);
+
+    Student student4, student5;
+    int search_result1 = search_position_list(list_student, 1, &student4);
+    //int search_result2 = search_key_list(list_student, 1, &student5);
+
+    //printf("Resultado da search: %d %d\n", search_result1, search_result2);
 
     int remove_result1 = remove_end_list(list_student);
     int remove_result2 = remove_beginning_list(list_student);
-    int remove_result3 = remove_list(list_student, 1);
+    int remove_result3 = remove_list(list_student, 2);
+
+    printf("Resultado da remove: %d %d %d\n", remove_result1, remove_result2,
+           remove_result3);
 
     free_list(list_student);
 

@@ -25,3 +25,6 @@ int add_sort_list(List* list_student, Student student);
 int remove_end_list(List* list_student);
 int remove_beginning_list(List* list_student);
 int remove_list(List* list_student, int key);
+
+int search_position_list(List* list_student, int position, Student* student);
+//int search_key_list(List* list_student, int key, Student* student);
