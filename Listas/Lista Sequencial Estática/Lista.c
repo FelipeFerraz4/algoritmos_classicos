@@ -137,3 +137,29 @@ int remove_beginning_list(List* list_student){
     return 1;
 }
 
+int remove_list(List* list_student, int key){
+    if(list_student == NULL){
+        return 0;
+    }
+
+    if(list_student->size_element == 0){
+        return 0;
+    }
+
+    int i = 0;
+    while(i < list_student->size_element && list_student->data[i].ID != key){
+        i++;
+    }
+
+    if(i == list_student->size_element){
+        return 0;
+    }
+
+    for(int j = i; i < list_student->size_element-1; j++){
+        list_student->data[j] = list_student->data[j+1];
+    }
+
+    list_student->size_element--;
+    return 1;
+}
+

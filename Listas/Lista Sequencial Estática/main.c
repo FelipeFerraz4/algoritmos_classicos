@@ -46,6 +46,7 @@ int main() {
 
     int remove_result1 = remove_end_list(list_student);
     int remove_result2 = remove_beginning_list(list_student);
+    int remove_result3 = remove_list(list_student, 1);
 
     free_list(list_student);
 
