@@ -40,6 +40,14 @@ int main()
 
     printf("Resultado da adition: %d %d %d\n", add_result1, add_result2, add_result3);
 
-    printf("Hello world!\n");
+    int remove_result1 = remove_list(generic_list, 1);
+    int remove_result2 = remove_list(generic_list, 2);
+    int remove_result3 = remove_list(generic_list, 3);
+
+    printf("Resultado da remove: %d %d %d\n", remove_result1, remove_result2,
+           remove_result3);
+
+    free_list(generic_list);
+
     return 0;
 }

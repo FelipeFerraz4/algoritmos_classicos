@@ -17,11 +17,7 @@ List* create_list(int SIZE_TYPE);
 void free_list(List* generic_list);
 
 int add_sort_list(List* generic_list, int key, void* element);
-
-
-
-
-
+int remove_list(List* generic_list, int key);
 
 
 

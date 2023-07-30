@@ -54,3 +54,32 @@ int add_sort_list(List* generic_list, int key, void* element){
     generic_list->size_list++;
     return 1;
 }
+
+int remove_list(List* generic_list, int key){
+    if(generic_list == NULL){
+        return 0;
+    }
+
+    if(generic_list->size_list == 0){
+        return 0;
+    }
+
+    int i = 0;
+    while(i < generic_list->size_list && generic_list->element[i].key != key){
+        i++;
+    }
+
+    if(i == generic_list->size_list){
+        return 0;
+    }
+
+    free(generic_list->element[i].data);
+
+    for(int j = i; j < generic_list->size_list; j++){
+        generic_list->element[j] = generic_list->element[j+1];
+    }
+
+    generic_list->size_list--;
+    return 1;
+}
+
