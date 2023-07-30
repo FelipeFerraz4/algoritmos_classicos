@@ -83,3 +83,31 @@ int remove_list(List* generic_list, int key){
     return 1;
 }
 
+int search_list(List* generic_list, int key, void* element){
+    if(generic_list == NULL){
+        return 0;
+    }
+
+    int i = 0;
+    while(i < generic_list->size_list && generic_list->element[i].key != key){
+        i++;
+    }
+
+    if(i == generic_list->size_list){
+        return 0;
+    }
+
+    memcpy(element, generic_list->element[i].data, generic_list->SIZE_TYPE);
+    return 1;
+}
+
+void print_list(List* generic_list, void (*print_element_list) (void*)){
+    if(generic_list == NULL){
+        return;
+    }
+
+    for(int i = 0; i < generic_list->size_list; i++){
+        printf("Key: %d\n", generic_list->element[i].key);
+        print_element_list(generic_list->element[i].data);
+    }
+}

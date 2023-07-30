@@ -18,6 +18,9 @@ void free_list(List* generic_list);
 
 int add_sort_list(List* generic_list, int key, void* element);
 int remove_list(List* generic_list, int key);
+int search_list(List* generic_list, int key, void* element);
+
+void print_list(List* generic_list, void (*print_element_list) (void *));
 
 
 
