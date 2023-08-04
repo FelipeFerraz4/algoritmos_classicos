@@ -9,14 +9,18 @@ typedef struct student{
 
 typedef struct no{
     Student data;
-    struct no* next;
+    struct no *next;
 }No;
 
 typedef No* List;
 
 List* create_list();
-void free_list(List* student_list);
-int size_list(List* student_list);
-int empty_list(List* student_list);
+void free_list(List *student_list);
+int size_list(List *student_list);
+int empty_list(List *student_list);
+
+int add_beginnig(List *student_list, Student new_student);
+int add_end(List *student_list, Student new_student);
+int add_sort(List *student_list, Student new_student);
 
 #endif // LISTA_H_INCLUDED
