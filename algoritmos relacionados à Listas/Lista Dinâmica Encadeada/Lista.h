@@ -2,15 +2,19 @@
 #define LISTA_H_INCLUDED
 
 typedef struct student{
-    int ID;
+    int id;
     char name[30];
     float test[3];
 }Student;
 
-typedef struct list_student{
-    int size_list;
-    int* first_element;
-}List;
+typedef struct no{
+    Student data;
+    struct no* next;
+}No;
 
+typedef No* List;
+
+List* create_list();
+void free_list(List* list_student);
 
 #endif // LISTA_H_INCLUDED
