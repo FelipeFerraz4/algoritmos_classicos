@@ -32,6 +32,13 @@ int main()
 
     printf("Resultado da adition: %d %d %d\n", add_result1, add_result2, add_result3);
 
+    Student student4, student5;
+
+    int search_result1 = search_position(student_list, 2, &student4);
+    int search_result2 = search_key(student_list, 3, &student5);
+
+    printf("Resultado da search: %d %d\n", search_result1, search_result2);
+
     int remove_result1 = remove_beginning(student_list);
     int remove_result2 = remove_end(student_list);
     int remove_result3 = remove_list(student_list, 2);

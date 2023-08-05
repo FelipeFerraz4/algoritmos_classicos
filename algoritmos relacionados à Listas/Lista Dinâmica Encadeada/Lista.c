@@ -186,10 +186,6 @@ int remove_list(List* student_list, int key){
         return 0;
     }
 
-    if((*student_list) == NULL){
-        return 0;
-    }
-
     No *previous, *no = *student_list;
     while(no != NULL && no->data.id != key){
         previous = no;
@@ -209,4 +205,46 @@ int remove_list(List* student_list, int key){
 
     free(no);
     return 1;
+}
+
+int search_position(List* student_list, int position, Student *student){
+    if(student_list == NULL || position <= 0){
+        return 0;
+    }
+
+    No *no = *student_list;
+    int i = 1;
+
+    while(no != NULL && i < position){
+        no = no->next;
+        i++;
+    }
+
+    if(no == NULL){
+        return 0;
+    }
+    else{
+        *student = no->data;
+        return 1;
+    }
+}
+
+int search_key(List* student_list, int key, Student *student){
+    if(student_list == NULL){
+        return 0;
+    }
+
+    No *no = *student_list;
+
+    while(no != NULL && no->data.id != key){
+        no = no->next;
+    }
+
+    if(no == NULL){
+        return 0;
+    }
+    else{
+        *student = no->data;
+        return 1;
+    }
 }

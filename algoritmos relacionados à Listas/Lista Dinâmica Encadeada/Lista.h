@@ -27,4 +27,8 @@ int remove_beginning(List* student_list);
 int remove_end(List* student_list);
 int remove_list(List* student_list, int key);
 
+int search_position(List* student_list, int position, Student *student);
+int search_key(List* student_list, int key, Student *student);
+
+
 #endif // LISTA_H_INCLUDED
