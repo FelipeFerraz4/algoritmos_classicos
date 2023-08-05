@@ -3,7 +3,7 @@
 #include <time.h>
 
 #define SIZE_LIST 10
-#define RAND_MAX 100
+#define RAND_MAX_LIST 100
 
 void complete_List(int list[],int size,int rand_max){
     srand((unsigned)time(NULL));
@@ -42,13 +42,12 @@ int main()
     int list[SIZE_LIST];
     int bigger, second_bigger;
 
-    complete_List(list, SIZE_LIST, RAND_MAX);
+    complete_List(list, SIZE_LIST, RAND_MAX_LIST);
     print_List(list, SIZE_LIST);
 
     bigger2_list(list, SIZE_LIST, &bigger, &second_bigger);
 
     printf("Maior: %d\nSegundo maior: %d\n", bigger, second_bigger);
 
-    printf("Hello world!\n");
     return 0;
 }
