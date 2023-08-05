@@ -31,6 +31,14 @@ int main()
     int add_result3 = add_sort(student_list, student3);
 
     printf("Resultado da adition: %d %d %d\n", add_result1, add_result2, add_result3);
+
+    int remove_result1 = remove_beginning(student_list);
+    int remove_result2 = remove_end(student_list);
+    int remove_result3 = remove_list(student_list, 2);
+
+    printf("Resultado da remotion: %d %d %d\n", remove_result1, remove_result2,
+           remove_result3);
+
 /*
     printf("\nmatricula: %d\n", student_list->data.id);
     printf("nome: %s\n", student_list->data.name);

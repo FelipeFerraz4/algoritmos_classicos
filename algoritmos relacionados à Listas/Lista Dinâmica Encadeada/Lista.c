@@ -16,7 +16,7 @@ List* create_list(){
 
 void free_list(List *student_list){
     if(student_list != NULL){
-        No* no;
+        No *no;
         while(*student_list != NULL){
             no = *student_list;
             *student_list = (*student_list)->next;
@@ -32,7 +32,7 @@ int size_list(List *student_list){
     }
 
     int count = 0;
-    No* no = *student_list;
+    No *no = *student_list;
     while(no != NULL){
         count++;
         no = no->next;
@@ -57,7 +57,7 @@ int add_beginnig(List *student_list, Student new_student){
         return 0;
     }
 
-    No* no = (No*) malloc(sizeof(No));
+    No *no = (No*) malloc(sizeof(No));
 
     if(no == NULL){
         return 0;
@@ -76,7 +76,7 @@ int add_end(List *student_list, Student new_student){
         return 0;
     }
 
-    No* no = (No*) malloc(sizeof(No));
+    No *no = (No*) malloc(sizeof(No));
 
     if(no == NULL){
         return 0;
@@ -137,7 +137,76 @@ int add_sort(List *student_list, Student new_student){
     }
 }
 
+int remove_beginning(List* student_list){
+    if(student_list == NULL){
+        return 0;
+    }
 
+    if((*student_list) == NULL){
+        return 0;
+    }
 
+    No *no = *student_list;
 
+    *student_list = no->next;
 
+    free(no);
+
+    return 1;
+}
+
+int remove_end(List* student_list){
+    if(student_list == NULL){
+        return 0;
+    }
+
+    if((*student_list) == NULL){
+        return 0;
+    }
+
+    No *previous, *no = *student_list;
+    while(no->next != NULL){
+        previous = no;
+        no = no->next;
+    }
+
+    if(no == (*student_list)){
+        *student_list = no->next;
+    }
+    else{
+        previous->next = no->next;
+    }
+
+    free(no);
+    return 1;
+}
+
+int remove_list(List* student_list, int key){
+    if(student_list == NULL){
+        return 0;
+    }
+
+    if((*student_list) == NULL){
+        return 0;
+    }
+
+    No *previous, *no = *student_list;
+    while(no != NULL && no->data.id != key){
+        previous = no;
+        no = no->next;
+    }
+
+    if(no == NULL){
+        return 0;
+    }
+
+    if(no == *student_list){
+        *student_list = no->next;
+    }
+    else{
+        previous->next = no->next;
+    }
+
+    free(no);
+    return 1;
+}

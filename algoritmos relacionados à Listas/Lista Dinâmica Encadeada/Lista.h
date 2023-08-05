@@ -23,4 +23,8 @@ int add_beginnig(List *student_list, Student new_student);
 int add_end(List *student_list, Student new_student);
 int add_sort(List *student_list, Student new_student);
 
+int remove_beginning(List* student_list);
+int remove_end(List* student_list);
+int remove_list(List* student_list, int key);
+
 #endif // LISTA_H_INCLUDED
