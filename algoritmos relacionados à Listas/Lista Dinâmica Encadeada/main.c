@@ -32,6 +32,8 @@ int main()
 
     printf("Resultado da adition: %d %d %d\n", add_result1, add_result2, add_result3);
 
+    print_list(student_list);
+
     Student student4, student5;
 
     int search_result1 = search_position(student_list, 2, &student4);
@@ -46,13 +48,6 @@ int main()
     printf("Resultado da remotion: %d %d %d\n", remove_result1, remove_result2,
            remove_result3);
 
-/*
-    printf("\nmatricula: %d\n", student_list->data.id);
-    printf("nome: %s\n", student_list->data.name);
-    printf("notas: %.2f %.2f %.2f\n", student_list->data.test[0],
-           student_list->data.test[1], student_list->data.test[2]);
-*/
     free_list(student_list);
-    printf("Hello world!\n");
     return 0;
 }

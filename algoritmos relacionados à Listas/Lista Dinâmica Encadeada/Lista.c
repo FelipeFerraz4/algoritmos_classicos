@@ -248,3 +248,25 @@ int search_key(List* student_list, int key, Student *student){
         return 1;
     }
 }
+
+void print_list(List* student_list){
+    if(student_list == NULL){
+        return ;
+    }
+
+    if((*student_list) == NULL){
+        return ;
+    }
+
+    No *no = *student_list;
+    while(no != NULL){
+        printf("\nmatricula: %d\n", no->data.id);
+        printf("nome: %s\n", no->data.name);
+        printf("notas: %.2f %.2f %.2f\n", no->data.test[0],
+           no->data.test[1], no->data.test[2]);
+
+        no = no->next;
+    }
+    printf("\n");
+
+}

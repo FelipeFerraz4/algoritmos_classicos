@@ -30,5 +30,6 @@ int remove_list(List* student_list, int key);
 int search_position(List* student_list, int position, Student *student);
 int search_key(List* student_list, int key, Student *student);
 
+void print_list(List* student_list);
 
 #endif // LISTA_H_INCLUDED
