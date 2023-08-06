@@ -33,8 +33,11 @@ typedef struct no{
 
 typedef struct heap{
     int size_heap;
-    No *no;
+    No *root;
 }Heap;
 
+Heap* create_heap();
+void free_no(No *root);
+void free_heap(Heap *heap);
 
 #endif // HEAP_H_INCLUDED
