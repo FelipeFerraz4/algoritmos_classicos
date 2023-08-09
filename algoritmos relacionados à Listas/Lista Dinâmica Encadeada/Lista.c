@@ -270,3 +270,26 @@ void print_list(List* student_list){
     printf("\n");
 
 }
+
+int add_beginning(List* student_list, Student student){
+    if(student_list == NULL){
+        return 0;
+    }
+    
+    No* no = (No*) malloc(sizeof(No));
+    
+    if(no == NULL){
+        return 0;
+    }
+    
+    no->data = student;
+    no->next = (*student_list);
+    no->previous = NULL;
+    
+    if(*student != NULL){
+        (*student_list)->previous = no;
+    }
+    
+    *student_list = no;
+    return 1;
+}
