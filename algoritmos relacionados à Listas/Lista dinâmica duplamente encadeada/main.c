@@ -11,7 +11,10 @@ int main() {
     int empty = empty_list(student_list);
     printf("Lista vazia: %d\n", empty);
     
-    printf("Hello world");
+    Student student1 = {1, "Pedro", 9, 8, 10};
+    
+    int add_result1 = add_beginning(student_list, student1);
+    printf("Resultado da adition: %d\n", add_result1);
     
     free_list(student_list);
 
