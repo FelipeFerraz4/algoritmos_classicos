@@ -48,6 +48,11 @@ int main()
     printf("Resultado da remotion: %d %d %d\n", remove_result1, remove_result2,
            remove_result3);
 
+    Student student1 = {1, "Pedro", 9, 8, 10};
+    
+    int add_result1 = add_beginning(student_list, student1);
+    printf("Resultado da adition: %d\n", add_result1);
+
     free_list(student_list);
     return 0;
 }
