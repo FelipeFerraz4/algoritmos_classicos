@@ -24,4 +24,6 @@ void free_list(List* student_list);
 int size_list(List* student_list);
 int empty_list(List* studen_list);
 
+int add_beginning(List* student_list, Student student);
+
 #endif // LISTA_H_INCLUDED
