@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <Lista.h>
+#include "Lista.h"
 
 int main() {
     List* student_list;
