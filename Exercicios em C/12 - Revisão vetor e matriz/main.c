@@ -6,6 +6,14 @@
 #define SIZE_ARRAY_MAX 10
 #define SIZE_MATRIX 5
 #define RAND_MAX_ARRAY 100
+#define NAME_MAX 50
+#define ADDRESS_MAX 100
+
+typedef struct student{
+    int age;
+    char name[NAME_MAX];
+    char address[ADDRESS_MAX];
+}Student;
 
 void get_user_number(int array_int[],int size_array){
     for(int i = 0; i < size_array; i++){
@@ -111,10 +119,55 @@ void print_matrix(int size_matrix, int matrix[size_matrix][size_matrix]){
     }
 }
 
-void biggest_element_matrix(int size_matrix, 
-                            int matrix[size_matrix][size_matrix], 
-                            int* line, int*column){
-    
+void biggest_element_matrix(int size_matrix,
+                            int matrix[size_matrix][size_matrix],
+                            int* line, int* column){
+    int biggest;
+    for(int i = 0; i < size_matrix; i++){
+        for(int j = 0; j < size_matrix; j++){
+            if(i == 0 && j == 0){
+                biggest = matrix[i][j];
+                *line = i;
+                *column = j;
+            }
+            else{
+                if(matrix[i][j] > biggest){
+                    biggest = matrix[i][j];
+                    *line = i;
+                    *column = j;
+                }
+            }
+        }
+    }
+}
+
+void rand_matrix(int size_matrix, int matrix[size_matrix][size_matrix]){
+    for(int i = 0; i < size_matrix; i++){
+        for(int j = 0; j < size_matrix; j++){
+            matrix[i][j] = rand() % RAND_MAX_ARRAY;
+        }
+    }
+}
+
+Student get_Student(){
+    Student student;
+
+    printf("Digite seu nome: \n");
+    fllush(stdin);
+    gets(student.name);
+
+    printf("Digite sua idade: \n");
+    scanf("%d", student.age);
+
+    printf("Digite o seu address: \n");
+    fllush(stdin);
+    gets(student.address);
+
+    return student;
+}
+
+void print(Student student){
+
 }
 
 int main()
@@ -122,7 +175,7 @@ int main()
     srand((unsigned)time(NULL));
     int array_int[SIZE_ARRAY_MAX];
     int matrix[SIZE_MATRIX][SIZE_MATRIX];
-    int sum, big, small, times_number;
+    int sum, big, small, times_number, line, column;
     float mean;
 
     get_random_number(array_int, SIZE_ARRAY_MAX);
@@ -143,12 +196,22 @@ int main()
 
     printf("O maior: %d e o menor: %d\n", big, small);
 
-    times_number = counter_element(array_int, SIZE_ARRAY_MAX);
-    printf("O number apareceu %d vezes\n", times_number);
+    //times_number = counter_element(array_int, SIZE_ARRAY_MAX);
+    //printf("O number apareceu %d vezes\n", times_number);
 
     identity_matrix(SIZE_MATRIX, matrix);
 
     print_matrix(SIZE_MATRIX, matrix);
+
+    printf("\n");
+
+    rand_matrix(SIZE_MATRIX, matrix);
+    print_matrix(SIZE_MATRIX, matrix);
+
+    biggest_element_matrix(SIZE_MATRIX, matrix, &line, &column);
+    printf("O maior elemento esta na linha %d e coluna %d", line, column);
+
+
 
     return 0;
 }
