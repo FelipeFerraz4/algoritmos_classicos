@@ -2,18 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <ctype.h>
 
 #define SIZE_ARRAY_MAX 10
 #define SIZE_MATRIX 5
 #define RAND_MAX_ARRAY 100
 #define NAME_MAX 50
 #define ADDRESS_MAX 100
+#define QUANTITY_QUESTIONS 5
+#define SIZE_CLASS 3
 
-typedef struct student{
-    int age;
-    char name[NAME_MAX];
-    char address[ADDRESS_MAX];
-}Student;
+//Vetores
 
 void get_user_number(int array_int[],int size_array){
     for(int i = 0; i < size_array; i++){
@@ -97,6 +96,8 @@ int counter_element(int array_int[], int size_array){
     return counter;
 }
 
+//Matrizes
+
 void identity_matrix(int size_matrix, int matrix[size_matrix][size_matrix]){
     for(int i = 0; i < size_matrix; i++){
         for(int j = 0; j < size_matrix; j++){
@@ -149,25 +150,73 @@ void rand_matrix(int size_matrix, int matrix[size_matrix][size_matrix]){
     }
 }
 
-Student get_Student(){
+//struct
+
+typedef struct student{
+    int age;
+    char name[NAME_MAX];
+    char address[ADDRESS_MAX];
+    char questions[QUANTITY_QUESTIONS];
+}Student;
+
+Student get_user_student(){
     Student student;
 
     printf("Digite seu nome: \n");
-    fllush(stdin);
+    fflush(stdin);
     gets(student.name);
 
     printf("Digite sua idade: \n");
-    scanf("%d", student.age);
+    scanf("%d", &student.age);
 
     printf("Digite o seu address: \n");
-    fllush(stdin);
+    fflush(stdin);
     gets(student.address);
+
+    for(int i = 0; i < QUANTITY_QUESTIONS; i++){
+        printf("Digite a alternativa da %d pergunta: \n", i+1);
+        scanf("%s", &student.questions[i]);
+    }
 
     return student;
 }
 
-void print(Student student){
+Student get_student(int age, char name[], char address[],
+                    char questions[]){
+    Student student; //= {age, name, address, questions};
 
+    student.age = age;
+    strcpy(student.name, name);
+    strcpy(student.address, address);
+    for(int i = 0; i < QUANTITY_QUESTIONS; i++){
+        student.questions[i] = toupper(questions[i]);
+    }
+
+    return student;
+}
+
+void print_struct(Student student){
+    printf("Nome do estudante: %s\n", student.name);
+    printf("Idade do estudante: %d\n", student.age);
+    printf("Adsress do estudante: %s\n", student.address);
+    for(int i = 0; i < QUANTITY_QUESTIONS; i++){
+        printf("Resposta da pergunta %d: %c \n",
+               i+1, student.questions[i]);
+    }
+}
+
+//Desafio
+
+void result_test(Student students[],char feedback[]){
+    for(int i = 0; i < SIZE_CLASS; i++){
+        int count = 0;
+        for(int j = 0; j < QUANTITY_QUESTIONS; j++){
+            if(students[i].questions[j] == feedback[j]){
+                count++;
+            }
+        }
+        printf("O estudante %s teve nota %d no teste\n", students[i].name, count);
+    }
 }
 
 int main()
@@ -177,6 +226,8 @@ int main()
     int matrix[SIZE_MATRIX][SIZE_MATRIX];
     int sum, big, small, times_number, line, column;
     float mean;
+
+    //Vetores
 
     get_random_number(array_int, SIZE_ARRAY_MAX);
 
@@ -196,22 +247,60 @@ int main()
 
     printf("O maior: %d e o menor: %d\n", big, small);
 
-    //times_number = counter_element(array_int, SIZE_ARRAY_MAX);
-    //printf("O number apareceu %d vezes\n", times_number);
+    printf("\n\n");
+
+    times_number = counter_element(array_int, SIZE_ARRAY_MAX);
+    printf("O number apareceu %d vezes\n", times_number);
+
+    printf("\n\n");
+
+    //Matrizes
 
     identity_matrix(SIZE_MATRIX, matrix);
 
     print_matrix(SIZE_MATRIX, matrix);
 
-    printf("\n");
+    printf("\n\n");
 
     rand_matrix(SIZE_MATRIX, matrix);
     print_matrix(SIZE_MATRIX, matrix);
 
+    printf("\n\n");
+
     biggest_element_matrix(SIZE_MATRIX, matrix, &line, &column);
-    printf("O maior elemento esta na linha %d e coluna %d", line, column);
+    printf("O maior elemento esta na linha %d e coluna %d\n", line, column);
+
+    printf("\n\n");
+
+    //Struct
+
+    Student student = get_user_student();
+
+    printf("\n\n");
+
+    print_struct(student);
+
+    printf("\n\n");
+
+    //Desafio
+
+    char feedback[QUANTITY_QUESTIONS] = {'A', 'B', 'C', 'D', 'E'};
+    char questions_student1[QUANTITY_QUESTIONS] = {'A', 'A', 'A', 'A', 'A'};
+    char questions_student2[QUANTITY_QUESTIONS] = {'A', 'A', 'C', 'B', 'E'};
+    char questions_student3[QUANTITY_QUESTIONS] = {'A', 'B', 'B', 'D', 'A'};
+
+    Student students[3];
+    students[0] = get_student(22, "Nicola", "Rua A",
+                                   questions_student1);
+
+     students[1] = get_student(23, "Maiara", "Rua B",
+                                   questions_student2);
+
+     students[2] = get_student(21, "Jose", "Rua C",
+                                   questions_student3);
 
 
+    result_test(students, feedback);
 
     return 0;
 }
