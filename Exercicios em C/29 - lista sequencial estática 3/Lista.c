@@ -47,3 +47,24 @@ int removeElement(SequentialList* list_int, int position){
     return 1;
 }
 
+int searchElement(SequentialList* list_int, int element){
+    if (list_int == NULL){
+        return -1;
+    }
+
+    if (list_int->size_list == 0){
+        return -1;
+    }
+
+    int i = 0;
+    while(i < list_int->size_list &&
+          list_int->list_int[i] != element){
+        i++;
+    }
+
+    if (i == list_int->size_list){
+        return 0;
+    }
+
+    return i;
+}

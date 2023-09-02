@@ -13,5 +13,6 @@ void free_list(SequentialList* list_int);
 
 int insertElement(SequentialList* list_int, int data);
 int removeElement(SequentialList* list_int, int position);
+int searchElement(SequentialList* list_int, int element);
 
 #endif // LISTA_H_INCLUDED

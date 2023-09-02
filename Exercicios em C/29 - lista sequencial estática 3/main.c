@@ -8,7 +8,7 @@ int main()
 
     list_int = create_list();
 
-    int result[7];
+    int result[8];
     int number[5] = {7, 21, 34, 65, 78};
 
     for(int i = 0; i < 5; i++){
@@ -27,6 +27,11 @@ int main()
     for (int i = 0; i < 3; i++){
         printf("%d ", list_int->list_int[i]);
     }
+
+    printf("\n");
+
+    result[8] = searchElement(list_int, 34);
+    printf("%d\n", list_int->list_int[result[8]]);
 
     printf("Hello world!\n");
 
