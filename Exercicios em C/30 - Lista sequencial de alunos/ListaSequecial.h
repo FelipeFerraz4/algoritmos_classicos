@@ -25,4 +25,12 @@ void imprime_lista(Lista* lista);
 int insere_lista_final(Lista* lista, Aluno aluno);
 int insere_lista_inicio(Lista* lista, Aluno aluno);
 int insere_lista_ordenada(Lista* lista, Aluno aluno);
+
+int remove_lista(Lista* lista, int matricula);
+int remove_lista_inicio(Lista* lista);
+int remove_lista_final(Lista* lista);
+
+int consulta_lista_posicao(Lista* lista, int posicao, Aluno* aluno);
+int consulta_lista_matricula(Lista* lista, int matricula, Aluno* aluno);
+
 #endif // LISTASEQUECIAL_H_INCLUDED

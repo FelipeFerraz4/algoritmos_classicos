@@ -116,3 +116,89 @@ int insere_lista_ordenada(Lista* lista, Aluno aluno){
     lista->quantidadeElemento++;
     return 1;
 }
+
+int remove_lista(Lista* lista, int matricula){
+    if(lista == NULL){
+        return 0;
+    }
+    if(lista->quantidadeElemento == 0){
+        return 0;
+    }
+    int i = 0;
+    while(i < lista->quantidadeElemento &&
+          lista->alunos[i].matricula != matricula){
+        i++;
+    }
+
+    if(i == lista->quantidadeElemento){
+        return 0;
+    }
+    else{
+        for(int j = i; j < lista->quantidadeElemento-1;j++){
+            lista->alunos[j] = lista->alunos[j+1];
+        }
+        lista->quantidadeElemento--;
+        return 1;
+    }
+}
+
+int remove_lista_inicio(Lista* lista){
+    if(lista == NULL){
+        return 0;
+    }
+    if(lista->quantidadeElemento == 0){
+        return 0;
+    }
+    for(int i = 0; i < lista->quantidadeElemento-1;i++){
+        lista->alunos[i] = lista->alunos[i+1];
+    }
+    lista->quantidadeElemento--;
+    return 1;
+}
+
+int remove_lista_final(Lista* lista){
+    if(lista == NULL){
+        return 0;
+    }
+    if(lista->quantidadeElemento == 0){
+        return 0;
+    }
+    lista->quantidadeElemento--;
+    return 1;
+}
+
+int consulta_lista_posicao(Lista* lista, int posicao,
+                           Aluno* aluno){
+    if(lista == NULL){
+        return 0;
+    }
+    if(lista->quantidadeElemento == 0){
+        return 0;
+    }
+    if(posicao < 0 || posicao > lista->quantidadeElemento){
+        return 0;
+    }
+    *aluno = lista->alunos[posicao-1];
+    return 1;
+
+}
+int consulta_lista_matricula(Lista* lista, int matricula,
+                             Aluno* aluno){
+    if(lista == NULL){
+        return 0;
+    }
+    if(lista->quantidadeElemento == 0){
+        return 0;
+    }
+    int i = 0;
+    while(i < lista->quantidadeElemento && lista->alunos[i].matricula != matricula){
+        i++;
+    }
+    if(i == lista->quantidadeElemento){
+        return 0;
+    }
+
+    *aluno = lista->alunos[i];
+    return 1;
+}
+
