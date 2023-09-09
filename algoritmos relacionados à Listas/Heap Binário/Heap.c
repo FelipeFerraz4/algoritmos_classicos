@@ -127,3 +127,9 @@ int search_heap(Heap* heap, char* name){
     strcpy(name, heap->alunos[0].name);
     return 1;
 }
+
+void print_heap(Heap* heap){
+    for(int i = 0; i < heap->size_heap; i++){
+        printf("%d ", heap->alunos[i].priority);
+    }
+}

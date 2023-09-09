@@ -18,6 +18,9 @@ void free_heap(Heap* heap);
 int empty_heap(Heap* heap);
 int full_heap(Heap* heap);
 
+void demote_element(Heap* heap, int father);
+void promote_element(Heap* heap, int children);
+
 int insert_heap(Heap* heap, char* name, int priority);
 int remove_heap(Heap* heap);
 int search_heap(Heap* heap, char* name);
