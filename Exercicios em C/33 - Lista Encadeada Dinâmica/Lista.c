@@ -53,3 +53,86 @@ int lista_vazia(Lista* lista){
     }
     return 0;
 }
+
+int inserir_inicio(Lista* lista, Aluno novoAluno){
+    if(lista == NULL){
+        return 0;
+    }
+
+    Elemento* no = (Elemento*) malloc(sizeof(Elemento));
+
+    if(no == NULL){
+        return 0;
+    }
+
+    no->dado = novoAluno;
+    no->prox = (*lista);
+
+    *lista = no;
+
+    return 1;
+}
+
+int inserir_fim(Lista* lista, Aluno novoAluno){
+    if(lista == NULL){
+        return 0;
+    }
+
+    Elemento* no = (Elemento*) malloc(sizeof(Elemento));
+
+    if(no == NULL){
+        return 0;
+    }
+
+    no->dado = novoAluno;
+    no->prox = NULL;
+
+    if(*lista == NULL){
+        *lista = no;
+    }
+    else{
+        Elemento* aux = *lista;
+        while(aux->prox != NULL){
+            aux = aux->prox;
+        }
+        aux->prox = no;
+    }
+    return 1;
+}
+
+int inserir_ordenado(Lista* lista, Aluno novoAluno){
+    if(lista == NULL){
+        return 0;
+    }
+
+    Elemento* no = (Elemento*) malloc(sizeof(Elemento));
+
+    if(no == NULL){
+        return 0;
+    }
+
+    no->dado = novoAluno;
+
+    if(lista_vazia(lista) == 1){
+        no->prox = *lista;
+        *lista = no;
+    }
+    else{
+        Elemento *anterior, *atual = *lista;
+
+        while(atual != NULL && atual->dado.id < novoAluno.id){
+            anterior = atual;
+            atual = atual->prox;
+        }
+
+        if(atual == *lista){
+            no->prox = *lista;
+            *lista = no;
+        }
+        else{
+            no->prox = anterior->prox;
+            anterior->prox = no;
+        }
+    }
+    return 1;
+}

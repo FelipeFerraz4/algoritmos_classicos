@@ -16,4 +16,8 @@ void libera_lista(Lista* lista);
 
 int tamanho_lista(Lista* lista);
 int lista_vazia(Lista* lista);
+
+int inserir_inicio(Lista* lista, Aluno novoAluno);
+int inserir_fim(Lista* lista, Aluno novoAluno);
+int inserir_ordenado(Lista* lista, Aluno novoAluno);
 #endif // LISTA_H_INCLUDED
