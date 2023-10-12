@@ -11,25 +11,26 @@ typedef struct pessoa{
 }Pessoa;
 
 typedef struct recurso{
+    int id;
     char nome[DEFAULT_MAX];
     int quantidade;
 }Recurso;
 
-typedef struct dados{
+typedef struct nave{
     int quantidade_pessoas;
     Pessoa pessoa[DEFAULT_MAX];
     int quantidade_recursos;
     Recurso recurso[DEFAULT_MAX];
-} Dados;
+} Nave;
 
-typedef struct nave_espacial{
+typedef struct dados{
     int prioridade;
-    Dados dados;
-}Nave;
+    Nave nave;
+} Dados;
 
 typedef struct heap{
     int quantidade_nave;
-    Nave naves[DEFAULT_MAX];
+    Dados dados[DEFAULT_MAX];
 }Heap;
 
 Heap* criar_heap();
@@ -39,7 +40,13 @@ int tamanho_heap(Heap* fila_de_naves);
 int heap_cheio(Heap* fila_de_naves);
 int heap_vazio(Heap* fila_de_naves);
 
-int inserir_heap(Heap* fila_de_naves, Dados dados, int prioridade);
 void subir_heap(Heap* fila_de_naves, int filho);
+void descer_heap(Heap* fila_de_naves, int pai);
+
+int inserir_heap(Heap* fila_de_naves, Nave nave, int prioridade);
+int remove_heap(Heap* fila_de_naves);
+
+int verifica_prioridade(int prioridade);
+
 
 #endif // HEAP_H_INCLUDED
