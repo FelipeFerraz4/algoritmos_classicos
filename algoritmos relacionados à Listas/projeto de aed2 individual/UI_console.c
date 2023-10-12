@@ -5,6 +5,75 @@
 
 #define MAX_TAMANHO_LINHA_FILE 500
 
+Pessoa get_passageiro(int id){
+    Pessoa passageiro;
+
+    passageiro.id = id;
+
+    printf("Digite o nome do passageiro: \n");
+    scanf("%s", passageiro.nome);
+
+    printf("Digite a idade do passageiro: \n");
+    scanf("%d", &passageiro.idade);
+
+    printf("Digite o planeta do passageiro: \n");
+    scanf("%s", passageiro.planeta);
+
+    return passageiro;
+}
+
+Recurso get_recurso(int id){
+    Recurso recurso;
+
+    recurso.id = id;
+
+    printf("Nome do recurso transportado: \n");
+    scanf("%s", recurso.nome);
+
+    printf("Quantidade do recurso transportado: \n");
+    scanf("%d", &recurso.quantidade);
+
+    return recurso;
+}
+
+int pegar_quantidade(char item[]){
+    int number;
+
+    printf("%s: \n", item);
+    scanf("%d", &number);
+
+    return number;
+}
+
+int pegar_prioridade(){
+    int prioridade;
+
+    printf("Digita a prioridade da nave: \n");
+    scanf("%d", &prioridade);
+
+    return prioridade;
+}
+
+Nave pegar_nave(){
+    Nave nave;
+
+    printf("\nDigite abaixo os dados da nave.\n");
+
+    nave.quantidade_pessoas = pegar_quantidade("Digite a quantiadade de passageiro da nave");
+
+    for(int i = 1; i <= nave.quantidade_pessoas; i++){
+        printf("passageiro pegos\n");
+    }
+
+    nave.quantidade_recursos = pegar_quantidade("Digite a quantiadade de recursos da nave");
+
+    for(int i = 1; i <= nave.quantidade_recursos; i++){
+        printf("recusos pegos\n");
+    }
+
+    return nave;
+}
+
 int option_list(){
     int option = 1;
 
@@ -20,10 +89,6 @@ int option_list(){
     return option;
 }
 
-void inserir_nave(){
-
-}
-
 int option_programa(Heap* fila_de_naves){
     int option = 1;
 
@@ -34,7 +99,19 @@ int option_programa(Heap* fila_de_naves){
             break;
         }
         else if(option == 1){
-            printf("inserido com sucesso\n\n");
+            Nave nave = pegar_nave();
+            int prioridade = pegar_prioridade();
+
+            int priority = verifica_prioridade(prioridade);
+
+            if(priority > prioridade){
+                printf("Encontramos uma emergencia na nave e ela ganhou uma maior prioridade\n");
+            }else if(priority < prioridade){
+                printf("Encontramos um clandestino na nave e a prioridade dela diminui para provomer uma melhor exame da nave\n");
+            }
+
+            //inserir_heap(fila_de_naves, nave, priority);
+            printf("Nave adicionada com sucesso\n");
         }
         else {
             printf("Removido com sucesso\n\n");
