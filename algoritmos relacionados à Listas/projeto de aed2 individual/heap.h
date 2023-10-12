@@ -47,6 +47,10 @@ int inserir_heap(Heap* fila_de_naves, Nave nave, int prioridade);
 int remove_heap(Heap* fila_de_naves);
 
 int verifica_prioridade(int prioridade);
+void teste_heap(Heap* fila_de_naves);
 
+int option_list();
+int option_programa(Heap* fila_de_naves);
+int get_nave_file(Heap* fila_de_naves);
 
 #endif // HEAP_H_INCLUDED
