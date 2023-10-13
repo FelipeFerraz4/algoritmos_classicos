@@ -1,10 +1,10 @@
-"O arquivo vem a sua prioridade e após isso vem a quantidade de pessoas e os dados das pessoas, depois a quantidade de materiais e os dados do material",,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-Prioridade,Quantidade de Pessoas,Id,Nome,Idade,Planeta,Id,Nome,Idade,Planeta,Quantidade de recursos,Id,Nome,Quantidade,Id,Nome,Quantidade,Id,Nome,Quantidade
-78,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
-78,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
-78,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
-78,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
-78,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
-78,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
-78,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
+"O arquivo vem a sua prioridade e após isso vem a quantidade de pessoas e os dados das pessoas, depois a quantidade de materiais e os dados do material",,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+Prioridade,Nome da Nave,Quantidade de Pessoas,Id,Nome,Idade,Planeta,Id,Nome,Idade,Planeta,Quantidade de recursos,Id,Nome,Quantidade,Id,Nome,Quantidade,Id,Nome,Quantidade
+40,Riachuelo,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
+78,Tupi,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
+21,Tonelero,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
+41,Humaita,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
+78,Tapajo,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
+78,Tikuna,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500
+20,Angostura,2,1,Alicia,30,Kepler-186f,2,Carol,28,GJ 1002b,3,1,Agua,800,2,Carne,200,3,Arroz,500

@@ -5,7 +5,7 @@
 
 #define MAX_TAMANHO_LINHA_FILE 500
 
-Pessoa get_passageiro(int id){
+Pessoa pegar_passageiro(int id){
     Pessoa passageiro;
 
     passageiro.id = id;
@@ -22,7 +22,7 @@ Pessoa get_passageiro(int id){
     return passageiro;
 }
 
-Recurso get_recurso(int id){
+Recurso pegar_recurso(int id){
     Recurso recurso;
 
     recurso.id = id;
@@ -59,16 +59,19 @@ Nave pegar_nave(){
 
     printf("\nDigite abaixo os dados da nave.\n");
 
+    printf("Digite o nome da nave: \n");
+    scanf("%s", nave.nome);
+
     nave.quantidade_pessoas = pegar_quantidade("Digite a quantiadade de passageiro da nave");
 
-    for(int i = 1; i <= nave.quantidade_pessoas; i++){
-        printf("passageiro pegos\n");
+    for(int i = 0; i < nave.quantidade_pessoas; i++){
+        nave.pessoa[i] = pegar_passageiro(i+1);
     }
 
     nave.quantidade_recursos = pegar_quantidade("Digite a quantiadade de recursos da nave");
 
-    for(int i = 1; i <= nave.quantidade_recursos; i++){
-        printf("recusos pegos\n");
+    for(int i = 0; i < nave.quantidade_recursos; i++){
+        nave.recurso[i] = pegar_recurso(i+1);
     }
 
     return nave;
@@ -81,10 +84,16 @@ int option_list(){
         printf("Escolha uma das alternativas.\n");
         printf("1 - inserir uma nova nave\n");
         printf("2 - remover uma nave\n");
+        printf("3 - Mostra naves cadastradas\n");
         printf("0 - Sair do programa\n");
         printf("Digite a sua alternativa: ");
         scanf("%d", &option);
-    }while(option < 0 && option >= 1);
+
+        if(option < 0 || option > 3){
+            printf("Erro, alternativa nao encontrada\n\n");
+        }
+
+    }while(option < 0 || option > 3);
 
     return option;
 }
@@ -110,11 +119,17 @@ int option_programa(Heap* fila_de_naves){
                 printf("Encontramos um clandestino na nave e a prioridade dela diminui para provomer uma melhor exame da nave\n");
             }
 
-            //inserir_heap(fila_de_naves, nave, priority);
+            inserir_heap(fila_de_naves, nave, priority);
             printf("Nave adicionada com sucesso\n");
         }
-        else {
+        else if(option == 2){
             printf("Removido com sucesso\n\n");
+        }
+        else{
+            for(int k = 0; k < tamanho_heap(fila_de_naves); k++){
+                printf("%d -> %d - ", k, fila_de_naves->dados[k].prioridade);
+                printf("%s\n", fila_de_naves->dados[k].nave.nome);
+    }
         }
     }while(option != 0);
 
@@ -139,12 +154,16 @@ int get_nave_file(Heap* fila_de_naves){
 
     //leitura do arquivo até ler uma linha nula
     while(fgets(buffer, sizeof(buffer), file) != NULL){
-        Dados dados;
+        int priority;
         Nave nave;
 
         char prioridade[20];
         strcpy(prioridade, strtok(buffer, ","));
-        dados.prioridade = atoi(prioridade);
+        priority = atoi(prioridade);
+
+        char nome_nave[100];
+        strcpy(nome_nave, strtok(NULL, ","));
+        strcpy(nave.nome ,nome_nave);
 
         char quantidade_passageiros[20];
         strcpy(quantidade_passageiros, strtok(NULL, ","));
@@ -194,12 +213,7 @@ int get_nave_file(Heap* fila_de_naves){
             nave.recurso[i] = recurso;
         }
 
-        dados.nave = nave;
-        fila_de_naves->dados[count] = dados;
-        count++;
-
+        inserir_heap(fila_de_naves, nave, priority);
     }
-
-    fila_de_naves->quantidade_nave = count;
     return 1;
 }

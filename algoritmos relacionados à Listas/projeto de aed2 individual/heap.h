@@ -17,6 +17,7 @@ typedef struct recurso{
 }Recurso;
 
 typedef struct nave{
+    char nome[DEFAULT_MAX];
     int quantidade_pessoas;
     Pessoa pessoa[DEFAULT_MAX];
     int quantidade_recursos;

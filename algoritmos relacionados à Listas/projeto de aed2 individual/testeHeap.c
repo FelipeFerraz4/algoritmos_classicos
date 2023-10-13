@@ -13,6 +13,7 @@ void teste_heap(Heap* fila_de_naves){
 
     Nave nave;
 
+    strcpy(nave.nome, "alvaro alberto");
     nave.pessoa[0].id = 1;
     nave.pessoa[0].idade = 20;
     strcpy(nave.pessoa[0].nome, "leticia");
@@ -50,7 +51,7 @@ void teste_heap(Heap* fila_de_naves){
 
     for(int k = 0; k < tamanho_heap(fila_de_naves); k++){
         printf("%d - ", fila_de_naves->dados[k].prioridade);
-        printf("%s\n", fila_de_naves->dados[k].nave.pessoa->nome);
+        printf("%s\n", fila_de_naves->dados[k].nave.nome);
     }
 
     printf("\n");
@@ -58,7 +59,7 @@ void teste_heap(Heap* fila_de_naves){
 
     for(int k = 0; k < tamanho_heap(fila_de_naves); k++){
         printf("%d - ", fila_de_naves->dados[k].prioridade);
-        printf("%s\n", fila_de_naves->dados[k].nave.pessoa->nome);
+        printf("%s\n", fila_de_naves->dados[k].nave.nome);
     }
 
     printf("\n");
