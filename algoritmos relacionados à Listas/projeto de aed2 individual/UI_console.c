@@ -5,21 +5,23 @@
 
 #define MAX_TAMANHO_LINHA_FILE 500
 
-Pessoa pegar_passageiro(int id){
-    Pessoa passageiro;
+Pessoa pegar_pessoa(int id){
+    Pessoa pessoa;
 
-    passageiro.id = id;
+    pessoa.id = id;
 
-    printf("Digite o nome do passageiro: \n");
-    scanf("%s", passageiro.nome);
+    printf("Digite o nome do pessoa: \n");
+    fflush(stdin);
+    gets(pessoa.nome);
 
-    printf("Digite a idade do passageiro: \n");
-    scanf("%d", &passageiro.idade);
+    printf("Digite a idade do pessoa: \n");
+    scanf("%d", &pessoa.idade);
 
-    printf("Digite o planeta do passageiro: \n");
-    scanf("%s", passageiro.planeta);
+    printf("Digite o planeta do pessoa: \n");
+    fflush(stdin);
+    gets(pessoa.planeta);
 
-    return passageiro;
+    return pessoa;
 }
 
 Recurso pegar_recurso(int id){
@@ -63,10 +65,10 @@ Nave pegar_nave(){
     fflush(stdin);
     gets(nave.nome);
 
-    nave.quantidade_pessoas = pegar_quantidade("Digite a quantiadade de passageiro da nave");
+    nave.quantidade_pessoas = pegar_quantidade("Digite a quantiadade de pessoas da nave");
 
     for(int i = 0; i < nave.quantidade_pessoas; i++){
-        nave.pessoa[i] = pegar_passageiro(i+1);
+        nave.pessoa[i] = pegar_pessoa(i+1);
     }
 
     nave.quantidade_recursos = pegar_quantidade("Digite a quantiadade de recursos da nave");
@@ -86,15 +88,16 @@ int option_list(){
         printf("1 - inserir uma nova nave\n");
         printf("2 - remover uma nave\n");
         printf("3 - Mostra naves cadastradas\n");
+        printf("4 - Mostra lista de item das naves\n");
         printf("0 - Sair do programa\n");
         printf("Digite a sua alternativa: ");
         scanf("%d", &option);
 
-        if(option < 0 || option > 3){
+        if(option < 0 || option > 4){
             printf("Erro, alternativa nao encontrada\n\n");
         }
 
-    }while(option < 0 || option > 3);
+    }while(option < 0 || option > 4);
 
     return option;
 }
@@ -127,11 +130,35 @@ int option_programa(Heap* fila_de_naves){
             remove_heap(fila_de_naves);
             printf("Nave removida com sucesso\n\n");
         }
-        else{
+        else if(option == 3){
             for(int k = 0; k < tamanho_heap(fila_de_naves); k++){
                 printf("%d -> %d - ", k, fila_de_naves->dados[k].prioridade);
                 printf("%s\n", fila_de_naves->dados[k].nave.nome);
             }
+            printf("\n");
+        }
+        else{
+            for(int k = 0; k < tamanho_heap(fila_de_naves); k++){
+                printf("%d -> %d - ", k, fila_de_naves->dados[k].prioridade);
+                Nave nave = fila_de_naves->dados[k].nave;
+                printf("%s\n\n", nave.nome);
+                for(int i = 0; i < nave.quantidade_pessoas; i++){
+                    Pessoa pessoa = nave.pessoa[i];
+                    printf("%d - ", pessoa.id);
+                    printf("%s - ", pessoa.nome);
+                    printf("%d - ", pessoa.idade);
+                    printf("%s\n", pessoa.planeta);
+                }
+                printf("\n");
+                for(int i = 0; i < nave.quantidade_recursos; i++){
+                    Recurso recurso = nave.recurso[i];
+                    printf("%d - ", recurso.id);
+                    printf("%s - ", recurso.nome);
+                    printf("%d\n", recurso.quantidade);
+                }
+                printf("\n---------------------------------------------------------------------------------\n");
+            }
+
             printf("\n");
         }
     }while(option != 0);
