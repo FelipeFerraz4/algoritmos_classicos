@@ -60,7 +60,8 @@ Nave pegar_nave(){
     printf("\nDigite abaixo os dados da nave.\n");
 
     printf("Digite o nome da nave: \n");
-    scanf("%s", nave.nome);
+    fflush(stdin);
+    gets(nave.nome);
 
     nave.quantidade_pessoas = pegar_quantidade("Digite a quantiadade de passageiro da nave");
 
@@ -120,16 +121,18 @@ int option_programa(Heap* fila_de_naves){
             }
 
             inserir_heap(fila_de_naves, nave, priority);
-            printf("Nave adicionada com sucesso\n");
+            printf("Nave adicionada com sucesso\n\n");
         }
         else if(option == 2){
-            printf("Removido com sucesso\n\n");
+            remove_heap(fila_de_naves);
+            printf("Nave removida com sucesso\n\n");
         }
         else{
             for(int k = 0; k < tamanho_heap(fila_de_naves); k++){
                 printf("%d -> %d - ", k, fila_de_naves->dados[k].prioridade);
                 printf("%s\n", fila_de_naves->dados[k].nave.nome);
-    }
+            }
+            printf("\n");
         }
     }while(option != 0);
 
@@ -138,7 +141,6 @@ int option_programa(Heap* fila_de_naves){
 
 int get_nave_file(Heap* fila_de_naves){
     char buffer[MAX_TAMANHO_LINHA_FILE];
-    int count = 0;
 
     FILE* file = fopen("naves.csv", "r");
 
