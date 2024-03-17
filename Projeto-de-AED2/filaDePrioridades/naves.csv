@@ -1,0 +1,53 @@
+"Cada nave conta com a sua prioridade e nome; após isso vem a quantidade de pessoas e os dados das pessoas, depois a quantidade de materiais e os dados do material",,,,,,,,,,,,,,,,,,,,,,,,
+"Os materiais estão identificado por um id; nessa sequência 1-bebida, 2-comida, 3-remédio, 4-roupa, 5-bitcoin e 6-armas ",,,,,,,,,,,,,,,,,,,,,,,,
+Prioridade,Nome da Nave,Quantidade de Pessoas,Id,Nome,Idade,Planeta,Id,Nome,Idade,Planeta,Id,Nome,Idade,Planeta,Quantidade de recursos,Id,Nome,Quantidade,Id,Nome,Quantidade,Id,Nome,Quantidade
+42,Riachuelo,3,1,Alice Johnson,34,Kepler-186f,2,Ana Silva,67,Kepler-442b,3,Carolina Pires,32,TRAPPIST-1f,3,2,Comida,500,1,Bebida,800,5,Bitcoin,13
+17,Tupi,3,1,David Smith,25,TRAPPIST-1e,2,Joao Santos,22,LHS 1140b,3,Lucas Camargo,46,Kepler-62f,3,4,Roupa,30,2,Comida,500,3,Remedio,120
+68,Tonelero,3,1,Maria Garcia,48,Proxima Centauri b,2,Maria Oliveira,41,TRAPPIST-1e,3,Vanessa Barbosa,58,TRAPPIST-1g,3,5,Bitcoin,17,3,Remedio,120,2,Comida,500
+23,Humaita,3,1,James Brown,19,Kepler-442b,2,Pedro Souza,55,Kepler-186f,3,Renato Viana,25,Kepler-186f,3,1,Bebida,800,5,Bitcoin,2,2,Comida,500
+95,Tapajo,3,1,Sarah Davis,56,LHS 1140b,2,Adriana Ferreira,30,TRAPPIST-1g,3,Aline Goncalves,41,LHS 1140b,3,2,Comida,500,6,Armas,6,4,Roupa,30
+51,Tikuna,3,1,John Miller,30,TRAPPIST-1g,2,Rafael Costa,49,Proxima Centauri b,3,Felipe Alves,37,Proxima Centauri b,3,5,Bitcoin,23,3,Roupa,30,2,Comida,500
+10,Angostura,3,1,Emily Martinez,42,Kepler-62f,2,Luisa Pereira,28,Kepler-62f,3,Isabela Castro,53,Kepler-442b,3,4,Roupa,30,5,Bitcoin,3,1,Bebida,800
+33,Nave Espacial Excalibur,3,1,Michael Wilson,22,TRAPPIST-1f,2,Marcelo Rodrigues,35,TRAPPIST-1f,3,Ricardo Pereira,28,TRAPPIST-1e,3,3,Remedio,120,2,Comida,500,4,Roupa,30
+77,Estrela Polar,3,1,Olivia Anderson,41,Kepler-442b,2,Patricia Almeida,52,TRAPPIST-1g,3,Fernanda Mendonça,61,Kepler-186f,3,5,Bitcoin,9,1,Bebida,800,2,Comida,500
+29,Nebulosa Relampago,3,1,Daniel Lee,28,TRAPPIST-1g,2,André Nunes,19,LHS 1140b,3,Marcos Siqueira,19,TRAPPIST-1f,3,1,Bebida,800,6,Armas,6,3,Remedio,120
+56,Viajante do Cosmos,3,1,Sophia Taylor,37,Proxima Centauri b,2,Camila Gomes,43,Proxima Centauri b,3,Leticia Moreira,42,Proxima Centauri b,3,2,Comida,500,4,Roupa,30,5,Bitcoin,17
+3,Nave da Galaxia,3,1,Robert Clark,50,Kepler-186f,2,Lucas Martins,25,Kepler-442b,3,Gustavo Cardoso,36,LHS 1140b,3,4,Roupa,30,1,Bebida,800,2,Comida,500
+62,Nave Estelar Andromeda,3,1,Emma White,29,TRAPPIST-1f,2,Beatriz Barbosa,37,Kepler-186f,3,Bruna Lima,49,TRAPPIST-1g,3,5,Bitcoin,14,2,Comida,500,1,Bebida,800
+13,Orca Negra,3,1,William Jackson,33,Kepler-442b,2,Thiago Azevedo,46,TRAPPIST-1f,3,Andre Santos,29,Kepler-62f,3,1,Bebida,800,6,Armas,6,5,Bebida,800
+84,Centuriao Celestial,3,1,Isabella Harris,45,LHS 1140b,2,Laura Pinto,33,Proxima Centauri b,3,Jessica Ribeiro,54,Kepler-442b,3,3,Remedio,120,4,Roupa,30,6,Armas,6
+6,Astronave Alfa,3,1,Joseph Thompson,21,TRAPPIST-1g,2,Fernando Ribeiro,61,TRAPPIST-1e,3,Thiago Reis,23,TRAPPIST-1e,3,2,Comida,500,5,Bitcoin,8,3,Remedio,120
+49,Falcao Cosmico,3,1,Ava Thomas,39,Kepler-62f,2,Isabela Carvalho,39,Kepler-62f,3,Camila Oliveira,35,Proxima Centauri b,3,1,Bebida,800,3,Remedio,120,6,Armas,6
+37,Gaviao Estelar,3,1,Christopher Moore,26,Proxima Centauri b,2,Gabriel Fernandes,20,LHS 1140b,3,Rafael Fernandes,44,Kepler-186f,3,5,Bitcoin,11,6,Armas,6,2,Comida,500
+71,Lanca Solar,3,1,Mia Walker,52,TRAPPIST-1e,2,Fernanda Dias,58,TRAPPIST-1g,3,Luisa Teixeira,30,TRAPPIST-1f,3,6,Armas,6,5,Bitcoin,4,1,Bebida,800
+14,Dragao do Espaço,3,1,Andrew Hall,18,Kepler-186f,2,Raul Medeiros,44,Kepler-442b,3,Daniel Andrade,22,LHS 1140b,3,6,Armas,6,1,Bebida,800,4,Roupa,30
+91,Nave Sideral Omega,3,1,Abigail Wright,36,LHS 1140b,2,Julia Lima,31,Kepler-186f,3,Mariana Costa,57,Kepler-62f,3,3,Remedio,120,2,Comida,500,2,Comida,500
+25,Vagabundo Intergalactico,3,1,Matthew Young,44,TRAPPIST-1f,2,Eduardo Castro,68,TRAPPIST-1f,3,Anderson Ferreira,38,TRAPPIST-1g,3,2,Comida,500,5,Bitcoin,36,1,Bebida,800
+58,Nave de Plasma,3,1,Charlotte Lewis,27,Proxima Centauri b,2,Leticia Correia,27,Proxima Centauri b,3,Juliana Almeida,47,Kepler-442b,3,5,Bitcoin,24,1,Bebida,800,3,Roupa,30
+8,Sombra Estelar,3,1,Nicholas King,31,Kepler-62f,2,Bruno Torres,56,Kepler-62f,3,Eduardo Sousa,50,TRAPPIST-1e,3,1,Bebida,800,3,Remedio,120,6,Armas,6
+70,Flecha do Universo,3,1,Grace Turner,55,TRAPPIST-1g,2,Bianca Mendes,42,Kepler-442b,3,Patricia Rocha,33,Proxima Centauri b,3,4,Roupa,30,6,Armas,6,2,Comida,500
+45,Nave Nebula Negra,3,1,Samuel Adams,24,Kepler-442b,2,Marcos Vieira,60,LHS 1140b,3,Gabriel Miranda,60,Kepler-186f,3,3,Remedio,120,5,Bitcoin,5,6,Armas,6
+21,Viajante Nebuloso,3,1,Lily Scott,49,Kepler-186f,2,Vitoria Cunha,24,TRAPPIST-1e,3,Marcella Dias,26,TRAPPIST-1f,3,5,Bitcoin,32,6,Armas,6,2,Comida,500
+99,Iris Estelar,3,1,Benjamin Allen,23,Proxima Centauri b,2,Daniel Machado,50,Kepler-186f,3,Caio Santos,55,LHS 1140b,3,1,Bebida,800,4,Roupa,30,6,Armas,6
+2,Onix do Espaco,3,1,Harper Hill,40,LHS 1140b,2,Larissa Rocha,36,TRAPPIST-1g,3,Larissa Goncalves,21,Kepler-62f,3,6,Armas,6,1,Bebida,200,5,Bitcoin,23
+67,Cruzador Galactico,3,1,Ethan Nelson,38,TRAPPIST-1e,2,Gustavo Pereira,29,Proxima Centauri b,3,Victor Araujo,40,TRAPPIST-1g,3,4,Roupa,30,3,Remedio,120,6,Armas,6
+38,Nave de Eter,3,1,Amelia Evans,20,TRAPPIST-1g,2,Vanessa Santos,66,Kepler-442b,3,Emily Rodrigues,51,Proxima Centauri b,3,5,Bitcoin,10,1,Bebida,800,6,Armas,6
+19,Aurora Cosmico,3,1,Daniel Parker,32,Kepler-442b,2,Andrea Cardoso,23,TRAPPIST-1f,3,Arthur Moraes,24,Kepler-442b,3,2,Comida,500,5,Bitcoin,31,6,Armas,6
+73,Aurora de Tita,3,1,Chloe Green,54,Kepler-62f,2,Felipe Miranda,48,TRAPPIST-1e,3,Gabriela Vasconcelos,39,TRAPPIST-1e,3,6,Armas,6,2,Comida,500,3,Remedio,120
+11,Nave Solaris,3,1,Jacob Baker,35,TRAPPIST-1f,2,Carolina Costa,26,LHS 1140b,3,Vinicius Carvalho,34,Kepler-186f,3,5,Bitcoin,28,3,Remedio,120,1,Bebida,800
+54,Escaravelho do Vazio,3,1,Madison Ward,47,Proxima Centauri b,2,Thiago Silva,64,Kepler-62f,3,Alice Pinto,59,TRAPPIST-1f,3,1,Bebida,800,4,Roupa,30,2,Comida,500
+27,Alfa Centauri,3,1,Alexander Brooks,53,Kepler-186f,2,Juliana Alves,53,Kepler-186f,3,Paulo Barbosa,27,LHS 1140b,3,4,Roupa,30,1,Bebida,800,5,Bitcoin,19
+80,Hidra Estelar,3,1,Victoria Mitchell,43,TRAPPIST-1g,2,Henrique Oliveira,38,Proxima Centauri b,3,Barbara Castro,31,Kepler-62f,3,2,Comida,500,5,Bitcoin,16,4,Roupa,30
+9,Pegaso do Ceu,3,1,Gabriel Carter,59,LHS 1140b,2,Aline Sa,34,TRAPPIST-1g,3,Enzo Machado,43,Proxima Centauri b,3,1,Bebida,800,2,Comida,200,5,Bitcoin,15
+63,Estrela do Crepusculo,3,1,Aria Hughes,46,Kepler-442b,2,Leandro Cardoso,57,Kepler-442b,3,Amanda Correia,56,TRAPPIST-1g,3,3,Remedio,120,4,Roupa,30,1,Bebida,800
+5,Nave do Zenite,3,1,Noah Murphy,58,Proxima Centauri b,2,Paula Marques,47,TRAPPIST-1f,3,Miguel Oliveira,45,Kepler-186f,3,6,Armas,6,3,Remedio,120,5,Bitcoin,18
+76,Astroviajante,3,1,Zoe Russell,60,Kepler-62f,2,Caio Ribeiro,32,LHS 1140b,3,Lara Sa,52,TRAPPIST-1e,3,2,Comida,500,5,Bitcoin,20,4,Roupa,30
+31,Espirito Cosmico,3,1,Liam Stewart,64,TRAPPIST-1e,2,Bruna Goncalves,21,Kepler-186f,3,Davi Ferreira,64,LHS 1140b,3,4,Roupa,30,1,Bebida,800,2,Comida,500
+66,Serpente das Estrelas,3,1,Avery Price,61,TRAPPIST-1f,2,Rafaela Barros,65,Proxima Centauri b,3,Rafaela Marques,48,Kepler-442b,3,5,Bitcoin,21,2,Comida,500,1,Bebida,800
+24,Nave dos Ventos Solares,3,1,Joshua Foster,63,LHS 1140b,2,Gustavo Castro,40,TRAPPIST-1e,3,Matheus Vieira,68,TRAPPIST-1f,3,1,Bebida,800,5,Bitcoin,35,3,Remedio,120
+59,Centelha do Horizonte,3,1,Addison Hayes,57,Kepler-186f,2,Márcia Lima,51,Kepler-62f,3,Ana Clara Martins,62,Proxima Centauri b,3,5,Bitcoin,12,3,Remedio,120,2,Comida,500
+16,Viajante do Infinito,3,1,Henry Gray,65,Kepler-442b,2,Ricardo Fernandes,45,TRAPPIST-1g,3,Pedro Ribeiro,69,Kepler-62f,3,3,Remedio,120,1,Bebida,800,5,Bitcoin,33
+48,Nave Nebulosa Azul,3,1,Ella Rivera,70,TRAPPIST-1g,2,Jessica Andrade,59,Kepler-442b,3,Luiz Felipe Cunha,63,TRAPPIST-1g,3,1,Bebida,800,5,Bitcoin,42,6,Armas,6
+88,Estrela Cadente,3,1,Noah Wood,66,Proxima Centauri b,2,Anderson Sousa,70,Proxima Centauri b,3,Helena Alencar,67,TRAPPIST-1e,3,4,Roupa,30,2,Comida,500,5,Bitcoin,41
+12,Odisseia Espacial,3,1,Aubrey Jenkins,68,Kepler-62f,2,Mariana Moraes,63,Kepler-186f,3,Guilherme Alves,70,Kepler-186f,3,5,Bitcoin,6,6,Armas,6,1,Bebida,800
+41,Nave da Constelacao,3,1,William Butler,62,TRAPPIST-1e,2,Leonardo Teixeira,54,TRAPPIST-1f,3,Melissa Torres,66,LHS 1140b,3,6,Armas,6,1,Bebida,800,3,Remedio,120
